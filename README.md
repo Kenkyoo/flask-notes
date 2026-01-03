@@ -1,6 +1,6 @@
-# Flask Blog
+# Flask Notes
 
-Una aplicación de blog simple construida con Flask y Bootstrap.
+Una aplicación de notas simple construida con Flask y Bootstrap.
 
 ## 🚀 Demo
 
@@ -9,8 +9,8 @@ Una aplicación de blog simple construida con Flask y Bootstrap.
 ## 📋 Características
 
 - Registro y autenticación de usuarios
-- Crear, editar y eliminar posts
-- Ver posts de todos los usuarios
+- Crear, editar y eliminar notas
+- Ver notas de todos los usuarios
 - Base de datos SQLite
 - Interfaz con Bootstrap
 
@@ -26,8 +26,8 @@ Una aplicación de blog simple construida con Flask y Bootstrap.
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/Kenkyoo/flask-blog.git
-cd flask-blog
+git clone https://github.com/Kenkyoo/flask-notes.git
+cd flask-notes
 ```
 
 2. Instala las dependencias:
@@ -52,7 +52,7 @@ La aplicación estará disponible en `http://127.0.0.1:5000`
 flaskr/
 ├── __init__.py      # Configuración de la app
 ├── auth.py          # Autenticación
-├── blog.py          # Rutas del blog
+├── notes.py          # Rutas del blog
 ├── db.py            # Base de datos
 ├── schema.sql       # Estructura de la BD
 └── templates/       # Plantillas HTML
@@ -61,9 +61,9 @@ flaskr/
 ## 🔑 Funcionalidades
 
 - **Registro/Login:** Autenticación de usuarios
-- **Crear Post:** Usuarios pueden crear posts
-- **Editar/Eliminar:** Solo el autor puede modificar sus posts
-- **Ver Posts:** Todos pueden ver los posts publicados
+- **Crear Nota:** Usuarios pueden crear notas
+- **Editar/Eliminar:** Solo el autor puede modificar sus notas
+- **Ver Notas:** Todos pueden ver las notas publicadas
 
 ## 📄 Licencia
 
