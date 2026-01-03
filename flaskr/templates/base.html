@@ -12,10 +12,11 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
 ></script>
-<body class="position-relative" data-bs-theme="dark">
-    <nav class="navbar bg-body-tertiary px-2">
-        <div class="container-fluid px-2">
-            <span class="navbar-brand mb-0 h1">Blog</span>
+<body class="bg-secondary-subtle position-relative d-flex" data-bs-theme="dark">
+    <nav class="navbar bg-dark-subtle">
+        <div
+            class="container-fluid d-flex flex-column justify-content-start align-items-center gap-4 px-2 h-100"
+        >
             <button
                 class="navbar-toggler"
                 type="button"
@@ -27,8 +28,10 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+            <div id="navbarNavAltMarkup">
+                <div
+                    class="navbar-nav d-flex flex-column justify-content-center align-items-center gap-4"
+                >
                     {% if g.user %}
                     <a class="nav-link active" aria-current="page" href="#"
                         >{{ g.user['username'] }}</a
@@ -48,7 +51,7 @@
             </div>
         </div>
     </nav>
-    <section class="px-5">
+    <main class="px-5 w-100">
         <header>{% block header %}{% endblock %}</header>
         {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>
@@ -57,7 +60,7 @@
             <div class="row">{% block content %}</div>
         </div>
         {% endblock %}
-    </section>
+    </main>
 
     <div
         class="container-fluid p-3 position-absolute top-100 start-50 translate-middle mt-5"

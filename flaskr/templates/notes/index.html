@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block header %}
 <h3 class="text-center my-2 p-2">
-    {% block title %}Posts{% endblock %}
-    <small class="text-body-secondary"> -- latest posts</small>
+    {% block title %}Notes{% endblock %}
+    <small class="text-body-secondary"> -- latest notes</small>
 </h3>
 <hr />
 {% if g.user %}
@@ -10,36 +10,36 @@
         <a
             class="nav-link active"
             aria-current="page"
-            href="{{ url_for('blog.index') }}"
+            href="{{ url_for('notes.index') }}"
             >Home</a
         >
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('blog.create') }}">New</a>
+        <a class="nav-link" href="{{ url_for('notes.create') }}">New</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
     </li>
 </ul>
-{% endif %} {% endblock %} {% block content %} {% for post in posts %}
+{% endif %} {% endblock %} {% block content %} {% for note in notes %}
 <div class="col my-3">
-    <div class="card p-4" style="width: 18rem">
+    <div class="bg-dark-subtle card p-4" style="width: 18rem">
         <div class="card-body p-2">
-            <h5 class="card-title my-1">{{ post['title'] }}</h5>
+            <h5 class="card-title my-1">{{ note['title'] }}</h5>
             <h6 class="card-subtitle my-2 text-body-secondary">
-                by {{ post['username'] }} on {{
-                post['created'].strftime('%Y-%m-%d') }}
+                by {{ note['username'] }} on {{
+                note['created'].strftime('%Y-%m-%d') }}
             </h6>
-            <p class="card-text p-3 my-4">{{ post['body'] }}</p>
-            {% if g.user['id'] == post['author_id'] %}
+            <p class="card-text p-3 my-4">{{ note['body'] }}</p>
+            {% if g.user['id'] == note['author_id'] %}
             <a
-                href="{{ url_for('blog.update', id=post['id']) }}"
+                href="{{ url_for('notes.update', id=note['id']) }}"
                 class="card-link"
                 >Edit</a
             >
             {% endif %}
             <a
-                href="{{ url_for('blog.view', id=post['id']) }}"
+                href="{{ url_for('notes.view', id=note['id']) }}"
                 class="card-link"
                 >View</a
             >
